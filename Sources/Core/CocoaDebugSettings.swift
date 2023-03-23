@@ -102,6 +102,33 @@ import Foundation
             UserDefaults.standard.synchronize()
         }
     }
+    
+    @objc public var enableWindowHelper: Bool = false {
+        didSet {
+            if enableWindowHelper == true
+            {
+                WindowHelper.shared.enable()
+            }
+            else
+            {
+                WindowHelper.shared.disable()
+            }
+        }
+    }
+    
+    @objc public var showWindowHelper: Bool = false {
+        didSet {
+            if showWindowHelper == true
+            {
+                WindowHelper.shared.vc.didTapBubble()
+            }
+            else
+            {
+                
+            }
+        }
+    }
+    
     @objc public var showBubbleAndWindow: Bool = false {
         didSet {
             UserDefaults.standard.set(showBubbleAndWindow, forKey: "showBubbleAndWindow_CocoaDebug")
