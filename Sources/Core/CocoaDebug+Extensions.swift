@@ -348,7 +348,7 @@ extension CocoaDebug {
         CocoaDebugSettings.shared.additionalViewController = additionalViewController
         
         var _ = _OCLogStoreManager.shared()
-        CocoaDebugSettings.shared.responseShake = true
+//         CocoaDebugSettings.shared.responseShake = true
         
         //share via email
         CocoaDebugSettings.shared.emailToRecipients = emailToRecipients
