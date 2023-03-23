@@ -116,15 +116,11 @@ import Foundation
         }
     }
     
-    @objc public var showWindowHelper: Bool = false {
+    @objc public var showWindowHelper: UIViewController? = nil {
         didSet {
-            if showWindowHelper == true
+            if showWindowHelper != nil
             {
-                WindowHelper.shared.vc.didTapBubble()
-            }
-            else
-            {
-                
+                WindowHelper.shared.vc.show(showWindowHelper!)
             }
         }
     }
