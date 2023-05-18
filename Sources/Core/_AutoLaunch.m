@@ -28,6 +28,7 @@ static const char *kPropertyKey = "kApplicationDidFinishLaunching_CocoaDebug_Key
 
 #pragma mark - notification
 - (void)cocoadebug_applicationDidFinishLaunchingNotification:(NSNotification *)notification {
+    #ifdef DEBUG
     if (self.cocoadebug_applicationDidFinishLaunching) {return;}
     self.cocoadebug_applicationDidFinishLaunching = YES;
     
@@ -35,6 +36,7 @@ static const char *kPropertyKey = "kApplicationDidFinishLaunching_CocoaDebug_Key
     if (CocoaDebug) {
         [[CocoaDebug class] performSelector:@selector(enable)];
     }
+    #endif
 }
 
 #pragma mark - getter setter
